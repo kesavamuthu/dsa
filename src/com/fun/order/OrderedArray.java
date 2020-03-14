@@ -7,7 +7,7 @@ public class OrderedArray
     private int[] values;
     private int size = 100;
 
-    public OrderedArray()
+    public OrderedArray()       //constructor
     {
         values = new int[size];
     }
