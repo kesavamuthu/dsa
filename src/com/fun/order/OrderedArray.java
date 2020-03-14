@@ -18,7 +18,7 @@ public class OrderedArray
         this.size = size;
     }
 
-    public void setArray(int a)
+    public void setArrayValues(int a)
     {
 
     }
