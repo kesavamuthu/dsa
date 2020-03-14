@@ -20,6 +20,6 @@ public class OrderedArray
 
     public void setArrayValues(int a)
     {
-        values[insertionIndex++] = a;
+        values[insertinIndex++] = a;
     }
 }
