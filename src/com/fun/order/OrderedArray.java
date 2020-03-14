@@ -11,12 +11,8 @@ public class OrderedArray
     {
         values = new int[size];
     }
-
-<<<<<<< HEAD
     public OrderedArray(int size) //overloaded constructor
-=======
-    public OrderedArray(int size) //constructor overload
->>>>>>> caa6293172fcd277bc61715c7ccc13e46e3228d4
+
     {
         values = new int[size];
         this.size = size;
