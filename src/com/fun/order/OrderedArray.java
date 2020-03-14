@@ -11,7 +11,7 @@ public class OrderedArray
     {
         values = new int[size];
     }
-    public OrderedArray(int size) //overloaded constructor
+    public OrderedArray(int size) //Overloaded constructor
 
     {
         values = new int[size];
