@@ -12,7 +12,7 @@ public class OrderedArray
         values = new int[size];
     }
 
-    public OrderedArray(int size)
+    public OrderedArray(int size) //constructor overload
     {
         values = new int[size];
         this.size = size;
