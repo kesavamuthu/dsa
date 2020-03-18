@@ -18,7 +18,7 @@ public class LargeNumberIndexFinder
             else if(secLarge < a[i])
                 secLarge = a[i];
         }
-        System.out.println(largest >= secLarge * 2 && index != -1 ? index : -1);
+        System.out.println(largest >= secLarge * 2 ? index : -1);
     }
 
 }
