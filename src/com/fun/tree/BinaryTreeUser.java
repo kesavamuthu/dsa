@@ -15,13 +15,16 @@ public class BinaryTreeUser
 
       /*  for(int a : arr)
         System.out.print(a + " ");*/
-
+        System.out.println("Preorder : using recursion");
         bt.preOrderTraversal(0);
-        System.out.println();
+        System.out.println("\nPost order :");
         bt.postOrderTraversal(0);
-        System.out.println();
+        System.out.println("\nIn order :");
         bt.inOrderTraversal(0);
-        System.out.println();
+        System.out.println("\nLevel order :");
         bt.levelOrderTraversal();
+        System.out.println("\nLevel order : using recursion ");
+        bt.levelOrderTraversalUsingRecursion(1, 0);
+
     }
 }
