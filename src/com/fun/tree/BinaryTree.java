@@ -1,50 +1,102 @@
 package com.fun.tree;
 
-public class BinaryTree
+import java.util.Arrays;
+
+class BinaryTree
 {
 
-    private BinaryTree root = null;
-    private BinaryTree left = null;
-    private BinaryTree right = null;
-    private int value;
+    int MAX_SIZE = 20;
+    int[] arr;
+    int size = -1;
 
-    public int getValue()
+    // int root = 0;
+    BinaryTree()
     {
-        return value;
+        arr = new int[MAX_SIZE];
+        Arrays.fill(arr, Integer.MIN_VALUE);
     }
 
-    public void setValue(int value)
+    int rightChild(int i)
     {
-        this.value = value;
+        return 2 * i + 2;
     }
 
-    public BinaryTree getLeft()
+    int leftChild(int i)
     {
-        return left;
+        return 2 * i + 1;
     }
 
-    public void setLeft(BinaryTree left)
+    int root(int i)
     {
-        this.left = left;
+        return (i - 1) / 2;
     }
 
-    public BinaryTree getRight()
+    void add(int a)
     {
-        return right;
+        if (size > arr.length)
+        {
+            System.out.println("I m full");
+            return;
+        }
+        arr[++size] = a;
     }
 
-    public void setRight(BinaryTree right)
+    void preOrderTraversal(int root)
     {
-        this.right = right;
+        if (root > size)
+        {
+            return;
+        }
+        System.out.print(arr[root] + " ");
+        preOrderTraversal(leftChild(root));
+        preOrderTraversal(rightChild(root));
+
     }
 
-    public BinaryTree getRoot()
+    /*int[] getAll(){
+        return arr;
+    }*/
+
+    void postOrderTraversal(int root)
     {
-        return root;
+        if (root > size)
+        {
+            return;
+        }
+        postOrderTraversal(leftChild(root));
+        postOrderTraversal(rightChild(root));
+        System.out.print(arr[root] + " ");
     }
 
-    public void setRoot(BinaryTree root)
+
+    void inOrderTraversal(int root)
     {
-        this.root = root;
+        if (root > size)
+        {
+            return;
+        }
+        inOrderTraversal(leftChild(root));
+        System.out.print(arr[root] + " ");
+        inOrderTraversal(rightChild(root));
+    }
+
+    void levelOrderTraversal()
+    {
+        int i = 1;
+        int root = 0;
+
+        while (i < MAX_SIZE)
+        {
+            while (root < i)
+            {
+                if (arr[root] == Integer.MIN_VALUE)
+                {
+                    return;
+                }
+                System.out.print(arr[root++] + " ");
+            }
+            i <<= 1;
+        }
     }
 }
+
