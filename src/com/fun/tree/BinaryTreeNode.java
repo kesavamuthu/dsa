@@ -69,8 +69,8 @@ public class BinaryTreeNode
 
 //      System.out.println(generateTree.HeightOfBT(root));
         root = root.insertLevelOrder(arr, root, 0);
-        root.reversePrint(root);
-
+       // root.reversePrint(root);
+       System.out.println(root.greaterSumBasedOnLevel(root));
     }
 
     public BinaryTreeNode insertLevelOrder(int[] arr,
@@ -98,20 +98,61 @@ public class BinaryTreeNode
         while (!q.isEmpty())
         {
             BinaryTreeNode tmp = q.poll();
-           if (tmp.right != null)
-           {
-              q.add(tmp.right);
-           }
-           if (tmp.left != null)
-           {
-              q.add(tmp.left);
-           }
-           st.push(tmp);
+            if (tmp.right != null)
+            {
+                q.add(tmp.right);
+            }
+            if (tmp.left != null)
+            {
+                q.add(tmp.left);
+            }
+            st.push(tmp);
         }
 
-       while (!st.isEmpty())
+        while (!st.isEmpty())
+        {
+            System.out.print(st.pop().data + " ");
+        }
+    }
+
+    int greaterSumBasedOnLevel(BinaryTreeNode root)
+    {
+        Queue<BinaryTreeNode> q = new LinkedList<>();
+        int i = 1;
+        int count = 0;
+        int max = 0;
+        int sum = 0;
+        BinaryTreeNode tmp;
+       if (root == null)
        {
-          System.out.print(st.pop().data +" ");
+          return Integer.MIN_VALUE;
        }
+        //tmp = root;
+        q.add(root);
+
+        while (!q.isEmpty())
+        {
+
+            count = i;
+            sum = 0;
+            while (count-- > 0)
+            {
+                tmp = q.poll();
+                if(tmp == null)
+                    break;
+                sum += tmp.data;
+               if (tmp.left != null)
+               {
+                  q.add(tmp.left);
+               }
+               if (tmp.right != null)
+               {
+                  q.add(tmp.right);
+               }
+            }
+            max = Math.max(max, sum);
+            i <<= 1;
+        }
+        return max;
     }
 }
