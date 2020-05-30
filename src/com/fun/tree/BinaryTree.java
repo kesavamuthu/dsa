@@ -98,5 +98,31 @@ class BinaryTree
             i <<= 1;
         }
     }
+
+    void levelOrderTraversalUsingRecursion(int root,
+                                           int i)
+    {
+        if (arr[i] == Integer.MIN_VALUE)
+        {
+            return;
+        }
+        while (i <= size && i < root)
+        {
+            System.out.print(arr[i++] + " ");
+        }
+        if (i > size)
+        {
+            return;
+        }
+        levelOrderTraversalUsingRecursion(root << 1, i);
+    }
+
+   /* int heightOfTheTree(int root){
+
+    }*/
+
+    void printIt(int root){
+
+    }
 }
 
