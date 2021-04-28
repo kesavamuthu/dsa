@@ -1,2 +1,2 @@
-# newtons_dsa
-contains dsa probs and sols
+# Data structure & Algorithm
+contains dsa problems and solutions
